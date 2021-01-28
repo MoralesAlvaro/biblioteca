@@ -1,0 +1,1 @@
+<p class="text-muted"><b><i class="{{$icono}}"></i> {{$nameLabel}} :</b> {{$result}} </p>

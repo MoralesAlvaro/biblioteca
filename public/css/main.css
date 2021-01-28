@@ -1,0 +1,6 @@
+/*  */
+.sombra_boton {
+  margin: 0px 0px 20px 0px;
+  box-shadow: 5px 5px 5px darkgray;
+  transition-duration: 0.3s;
+}
