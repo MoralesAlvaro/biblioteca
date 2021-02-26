@@ -19,59 +19,13 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 </head>
-<!-- <body class="">
-<div class="login-box">
-  <div class="login-logo">
-    <a href="#" class="text-poppins">Login</a>
-  </div>
-  <div class="card">
-    <div class="card-body login-card-body">
-      <p class="login-box-msg">Inicia sesión</p>
-
-      <form method="POST" action="{{ route('login') }}">
-        @csrf
-        <div class="input-group mb-3">
-          <input type="email" id="email" name="email" class="form-control" placeholder="Email">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
-            </div>
-            @error('email')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-          </div>
-        </div>
-        <div class="input-group mb-3">
-          <input type="password" id="password" name="password" class="form-control" placeholder="Password">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-
-            @error('password')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <button type="submit" class="btn btn-primary btn-block">Iniciar</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-</div> -->
- <div class="container-login">
+<body class="">
+  <div class="container-login">
       <div class="forms-container">
         <div class="signin-signup">
           <form method="POST" action="{{ route('login') }}" class="sign-in-form">
-          @csrf
-            <h2 class="title">Iniciar sesión</h2>
+            @csrf
+            <h2 class="title text-poppins">Iniciar sesión</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
               <input type="email" id="email" name="email" autocomplete="off" placeholder="Email" />
@@ -92,37 +46,6 @@
             @enderror
             <button type="submit"  class="btn solid">Iniciar</button>
           </form>
-          <!-- <form action="#" class="sign-up-form">
-            <h2 class="title">Sign up</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
-            </div>
-            <input type="submit" class="btn" value="Sign up" />
-            <p class="social-text">Or Sign up with social platforms</p>
-            <div class="social-media">
-              <a href="#" class="social-icon">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-google"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div>
-          </form> -->
         </div>
       </div>
 
