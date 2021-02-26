@@ -74,14 +74,14 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
-      <div class="mt-3 pb-3 mb-3">
-        <div class="image d-flex justify-content-center">
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
           <a href="{{ route('usuarios.show', Auth::user()->id)}}">
-            <img src="{{ Auth::user()->photo }}"  style="margin:auto" class="img-circle elevation-2" alt="User Image" width="100">
+            <img src="{{ Auth::user()->photo }}" class="img-circle elevation-2" alt="User Image">
           </a>
         </div>
         <div class="info">
-          <a href="{{ route('usuarios.show', Auth::user()->id)}}" class="d-block text-center text-white mt-3">{{Auth::user()->name.' '.Auth::user()->lastName}}</a>
+          <a href="{{ route('usuarios.show', Auth::user()->id)}}" class="d-block text-white">{{Auth::user()->name.' '.Auth::user()->lastName}}</a>
         </div>
       </div>
 
