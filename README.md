@@ -78,6 +78,11 @@ MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
 MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 ```
 
+2.1 Generar key
+```
+php artisan key:generate
+```
+
 3. Luego de crear la base de datos, migramos los seeds a la base de datos
 
 ```

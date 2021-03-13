@@ -72,7 +72,7 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar bg-blue-200 elevation-4">
     <!-- Brand Logo -->
     <!-- <a href="index3.html" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
@@ -90,7 +90,7 @@
           </a>
         </div>
         <div class="info">
-          <a href="{{ route('usuarios.show', Auth::user()->id)}}" class="d-block">{{Auth::user()->name.' '.Auth::user()->lastName}}</a>
+          <a href="{{ route('usuarios.show', Auth::user()->id)}}" class="d-block text-white">{{Auth::user()->name.' '.Auth::user()->lastName}}</a>
         </div>
       </div>
 
