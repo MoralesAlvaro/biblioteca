@@ -28,7 +28,7 @@
             <h2 class="title text-poppins">Iniciar sesión</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="email" id="email" name="email" autocomplete="off" placeholder="Email" />
+              <input type="email" id="email" name="email" autocomplete="off" placeholder="Correo" />
             </div>
             @error('email')
                 <span class="invalid-feedback" role="alert">
@@ -37,7 +37,7 @@
             @enderror
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" id="password" name="password" placeholder="Password" />
+              <input type="password" id="password" name="password" placeholder="Contraseña" />
             </div>
             @error('password')
                 <span class="invalid-feedback" role="alert">
