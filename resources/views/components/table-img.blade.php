@@ -35,7 +35,7 @@
               <td>{{$datos->$campo}}</td>
           @endforeach
           <td>
-            <a href="{{ route($slug.'.show',$datos->id)}}" class="link-primary">Prestar</a>
+            <button class="link-primary btn-show" data-toggle="modal" data-target="#modalDetail-{{$datos->id}}">Ver</button>
           </td>
           <td>
             <a href="{{ route($slug.'.edit',$datos->id)}}" class="btn btn-sm ">
@@ -66,6 +66,52 @@
             </button>
           </td>
         </tr>
+        <!-- Detail Modal -->
+          <div class="modal fade" id="modalDetail-{{$datos->id}}" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <div>{{ $datos->titulo}}</div>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-7">
+                      <div class="mb-1">
+                        <div>ISBN:
+                        <span>{{$datos->isbn}}</span></div>
+                      </div>
+                      <div class="mb-1">
+                        <div>Autor:
+                        <span>{{$datos->autor}}</span></div>
+                      </div>
+                      <div class="mb-1">
+                        <div>Editorial:
+                        <span>{{$datos->editorial}}</span></div>
+                      </div>
+                      <div class="mb-1">
+                        {{$slug}}
+                        <div>Estado:
+                          @if($datos->estado === 'Disponible')
+                            <span class="available">{{$datos->estado}}</span>
+                          @else
+                            <span class="notavailable">{{$datos->estado}}</span>
+                          @endif
+                        </div>
+                      </div>
+                      <div class="mb-1">
+                        <a href="{{ route($slug.'.edit',$datos->id)}}">Editar</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal" id="ko">Cancelar</button>
+                  <a href="{{ route('prestamos'.'.create', ['query' => $datos->id])}}">Prestar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- End Detail Modal -->
         <!-- Modal Eliminar-->
         <div class="modal fade" id="modal-{{$datos->id}}" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -106,3 +152,34 @@
   </div>
   <!-- /.card-body -->
 </div>
+<style>
+.available {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  background: #d1fae5;
+  color:#195f5e;
+  font-weight: 600;
+  border-radius: 9999px;
+  display: inline-block;
+}
+.notavailable {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  background: #FCA5A5;
+  color:#B91C1C;
+  font-weight: 600;
+  border-radius: 9999px;
+  display: inline-block;
+}
+.btn-show {
+  border: none;
+  background: none;
+  color: #007bff;
+}
+.btn-show:focus {
+  outline: none
+}
+.btn-show:hover {
+  color: #0056b3;
+}
+</style>

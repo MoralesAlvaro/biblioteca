@@ -13,9 +13,9 @@
         <select class="form-control select2" name="libro_id" data-placeholder="" style="width: 100%;" >
           @foreach($libro as $datos)
             @if($datos->estado == 'Disponible')
-              <option value="{{$datos->id}}">{{$datos->titulo}}</option>
+              <option value="{{$datos->id}}" {{ $datos->id == $id ? 'selected' : '' }}>{{$datos->titulo}}</option>
             @endif
-          @endforeach        
+          @endforeach
         </select>
         <!-- Mostando errores de validación -->
         @if ($errors->first('libro_id'))
