@@ -20,6 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('resetPassword', 'UserController@resetPasswordView')->name('resetPassword');
+Route::post('updatePassword','UserController@updatePassword')->name('updatePassword');
 
 Route::group(['middleware' => 'auth'], function ($router) {
     Route::resource('categorias', 'CategoriaController');

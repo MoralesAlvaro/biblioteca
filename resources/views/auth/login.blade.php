@@ -21,6 +21,7 @@
 </head>
 <body class="">
   <div class="container-login">
+    
       <div class="forms-container">
         <div class="signin-signup">
           <form method="POST" action="{{ route('login') }}" class="sign-in-form">
@@ -44,7 +45,16 @@
                     <strong>{{ $message }}</strong>
                 </span>
             @enderror
+            
+            @if($success ?? '')
+              <div style="color: green">
+                <span >
+                  <strong>{{ $success ?? '' }}</strong>
+                </span>
+                </div>
+            @endif
             <button type="submit"  class="btn solid">Iniciar</button>
+            <a href="{{route('resetPassword')}} ">¿Olvidates tu Contraseña?</a>
           </form>
         </div>
       </div>

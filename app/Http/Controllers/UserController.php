@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -173,5 +174,41 @@ class UserController extends Controller
         $data = User::find($id);
         $data->delete();
         return redirect('/usuarios')->with('success', 'El registro se ha sido eliminado correctamente!.'); 
+    }
+
+    public function resetPasswordView(Type $var = null)
+    {
+        return view('auth/passwords.reset');
+    }
+
+    public function updatePassword(Request $request)
+    {
+        $email = $request->input('email');        
+        
+        if ($email != '') {
+            $user = DB::table('users')->select('email', 'id')->where('email', $email)->first();
+            
+            if ($user != '') {
+                $pass1 = $request->get('password');
+                $pass2 = $request->input('password_confirm');
+
+                if ($pass1 == $pass2 && $pass1 != '' && $pass2 != '' ) {
+                    $success = 'Contraseña actualizada con exito';
+                    $usuario = User::find($user->id);
+                    $usuario = $usuario->fill(['password' => Hash::make($request->get('password'))])->update();
+                    $exito = "Contraseña reestablecida con exito";
+                    return redirect('login')->with('success', 'El registro se ha sido eliminado correctamente!.'); 
+                }else{
+                    $error = 'Las contraseñas no son iguales.';
+                    return view('auth/passwords.reset', compact('error', 'email'));
+                }
+            }else{             
+                $error = 'No hemos podido localizar tu usuario, revisa la escritura del correo.';
+                return view('auth/passwords.reset', compact('error', 'email'));
+            }
+        }else{
+            return redirect('/resetPassword')->with('email', 'Ingresa un correo válido');
+        }
+
     }
 }
