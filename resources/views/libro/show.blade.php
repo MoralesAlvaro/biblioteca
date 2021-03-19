@@ -1,7 +1,7 @@
 @extends('layouts.headDefault')
 
 @section('content')
-<x-btn nameBtn="Retornar" :slug="$slug.'.index'" />
+<x-btn nameBtn="Regresar a lista de libros" :slug="$slug.'.index'" />
 
 <div class="container">
   <!-- Mensaje de confirmación -->

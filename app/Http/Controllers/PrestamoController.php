@@ -32,17 +32,18 @@ class PrestamoController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
+     *@param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        $id = $request->input('query');
         //
         $slug = 'prestamos';
         $nameForm = 'Registrar Préstamo';
         $estudiante = Estudiante::all();
         $libro = Libro::all();
-        return view('prestamo.create', compact('slug', 'nameForm', 'estudiante', 'libro'));
+        return view('prestamo.create', compact('id', 'slug', 'nameForm', 'estudiante', 'libro'));
     }
 
     /**
