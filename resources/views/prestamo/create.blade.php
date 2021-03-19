@@ -6,6 +6,7 @@
   <div class="row">
     <div class="col-sm-6">
       <x-select fieldName="Estudiante" paceholder="Seleccione uno" nameSelect="estudiante_id" :result="$estudiante" campo="nombre" />
+      <a href="{{ route('estudiantes'.'.create')}}">¿Desea registrar un nuevo estudiante?</a>
     </div>
     <div class="col-sm-6">
       <div class="form-group">
@@ -24,6 +25,7 @@
         </span>
         @endif
       </div>
+      <a href="{{ route('libros'.'.create')}}">¿Desea registrar un nuevo libro?</a>
     </div>
   </div> 
   <x-texttarea fieldName="Comentario" nameText="comentario" />
