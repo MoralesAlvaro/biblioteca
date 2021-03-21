@@ -65,7 +65,7 @@ class PrestamoController extends Controller
         $libro = Libro::find($request->libro_id);
         if ($libro) {
             // Actualizando campo estado del libro
-            $libro->fill(['estado' => 'Prestado'])->update();
+            $libro->fill(['estado' => 0])->update();
         }
 
         $prestamo = new Prestamo($request->all());

@@ -12,7 +12,7 @@
         <label>Libro</label>
         <select class="form-control select2" name="libro_id" data-placeholder="" style="width: 100%;" >
           @foreach($libro as $datos)
-            @if($datos->estado == 'Disponible')
+            @if($datos->estado == 1)
               <option value="{{$datos->id}}" {{ $datos->id == $id ? 'selected' : '' }}>{{$datos->titulo}}</option>
             @endif
           @endforeach
