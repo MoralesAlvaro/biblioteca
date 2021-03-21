@@ -27,11 +27,10 @@ class LibroController extends Controller
         //
         $panel = 'Libros';
         $slug = 'libros';
-        $encabezados= ['ID', 'ISBN', 'Título', 'Autor', 'Editorial', 'Disponibles'];
-        $campos= ['id', 'isbn', 'titulo', 'autor', 'editorial'];
+        $encabezados= ['ID', 'ISBN', 'Título', 'Autor', 'Editorial', 'Hojas','Disponibles'];
+        $campos= ['id', 'isbn', 'titulo', 'autor', 'editorial', 'numero_hojas'];
         $data = Libro::orderBy('id', 'ASC')->get();
         $data = $data->groupBy('titulo');
-        //dd($data);
         return view('libro.index', compact('data','panel', 'encabezados', 'campos', 'slug'));
     }
 
@@ -64,9 +63,10 @@ class LibroController extends Controller
             'titulo' => 'required',
             'autor' => 'required',
             'editorial' => 'required',
+            'numero_hojas' => 'required|numeric',
             'estado' => 'required',
-            'categoria_id' => 'required',
-            'curso_id' => 'required',
+            'categoria_id' => 'required|numeric',
+            'curso_id' => 'required|numeric',
         ]);
 
         $libro = new Libro($request->all());
@@ -125,9 +125,10 @@ class LibroController extends Controller
                 'titulo' => 'required',
                 'autor' => 'required',
                 'editorial' => 'required',
+                'numero_hojas' => 'required|numeric',
                 'estado' => 'required',
-                'categoria_id' => 'required',
-                'curso_id' => 'required',
+                'categoria_id' => 'required|numeric',
+                'curso_id' => 'required|numeric',
             ]);
 
             $libro->update($request->all());

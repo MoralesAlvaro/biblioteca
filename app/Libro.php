@@ -15,6 +15,7 @@ class Libro extends Model
         'titulo',
         'autor',
         'editorial',
+        'numero_hojas',
         'estado',
         'categoria_id',
         'curso_id',
