@@ -37,12 +37,14 @@
       </thead>
       <tbody>
         @foreach($data as $datos)
-          @if($datos->libro->estado == 'Prestado')
+          @if($datos->libro->estado == 0)
           <tr>
             <td>{{$datos->id}}</td>
             <td>{{$datos->estudiante->nombre}}</td>
             <td>{{$datos->libro->titulo}}</td>
             <td>{{$datos->created_at->format('j F, Y')}}</td>
+            
+            <td>{{$datos->devolucion}}</td>
             <td>
               <a href="{{ route($slug.'.show',$datos->id)}}" class="btn btn-sm btn-success">Ver</a>
             </td>

@@ -17,6 +17,7 @@ class CreatePrestamosTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('estudiante_id');
             $table->unsignedInteger('libro_id');
+            $table->date('devolucion');
             $table->longText('comentario')->nullable();
             $table->softDeletes();
             $table->timestamps();
