@@ -6,6 +6,7 @@ use App\Libro;
 use App\Curso;
 use App\Categoria;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LibroController extends Controller
 {
@@ -26,9 +27,11 @@ class LibroController extends Controller
         //
         $panel = 'Libros';
         $slug = 'libros';
-        $encabezados= ['ID', 'ISBN', 'Título', 'Autor', 'Editorial', 'Estado'];
-        $campos= ['id', 'isbn', 'titulo', 'autor','editorial', 'estado'];
-        $data = Libro::orderBy('id', 'DESC')->paginate(1000);
+        $encabezados= ['ID', 'ISBN', 'Título', 'Autor', 'Editorial', 'Disponibles'];
+        $campos= ['id', 'isbn', 'titulo', 'autor', 'editorial'];
+        $data = Libro::orderBy('id', 'ASC')->get();
+        $data = $data->groupBy('titulo');
+        //dd($data);
         return view('libro.index', compact('data','panel', 'encabezados', 'campos', 'slug'));
     }
 
@@ -57,7 +60,7 @@ class LibroController extends Controller
     {
         // Validando data
         $request->validate([
-            'isbn' => 'required',
+            'isbn' => 'required|unique:libros',
             'titulo' => 'required',
             'autor' => 'required',
             'editorial' => 'required',
