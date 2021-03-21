@@ -25,6 +25,10 @@
         @endif
       </div>
     </div>
+
+    <div class="col-sm-6">
+      <x-field type="date" nameInput="devolucion" fieldName="Fecha devolución" placeholder="Ingrese fecha de devolucion" maxlength="20"/>  
+    </div>
   </div> 
   <x-texttarea fieldName="Comentario" nameText="comentario" />
 </x-form>

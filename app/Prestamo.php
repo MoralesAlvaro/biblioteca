@@ -13,6 +13,7 @@ class Prestamo extends Model
     protected $fillable = [
         'estudiante_id',
         'libro_id',
+        'devolucion',
         'comentario'
     ];
 
