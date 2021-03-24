@@ -6,6 +6,7 @@ use App\Libro;
 use App\Curso;
 use App\Categoria;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LibroController extends Controller
 {
@@ -26,9 +27,10 @@ class LibroController extends Controller
         //
         $panel = 'Libros';
         $slug = 'libros';
-        $encabezados= ['ID', 'ISBN', 'Título', 'Autor', 'Editorial', 'Estado'];
-        $campos= ['id', 'isbn', 'titulo', 'autor','editorial', 'estado'];
-        $data = Libro::orderBy('id', 'DESC')->paginate(1000);
+        $encabezados= ['ID', 'ISBN', 'Título', 'Autor', 'Editorial', 'Hojas','Disponibles'];
+        $campos= ['id', 'isbn', 'titulo', 'autor', 'editorial', 'numero_hojas'];
+        $data = Libro::orderBy('id', 'ASC')->get();
+        $data = $data->groupBy('titulo');
         return view('libro.index', compact('data','panel', 'encabezados', 'campos', 'slug'));
     }
 
@@ -57,13 +59,14 @@ class LibroController extends Controller
     {
         // Validando data
         $request->validate([
-            'isbn' => 'required',
+            'isbn' => 'required|unique:libros',
             'titulo' => 'required',
             'autor' => 'required',
             'editorial' => 'required',
+            'numero_hojas' => 'required|numeric',
             'estado' => 'required',
-            'categoria_id' => 'required',
-            'curso_id' => 'required',
+            'categoria_id' => 'required|numeric',
+            'curso_id' => 'required|numeric',
         ]);
 
         $libro = new Libro($request->all());
@@ -122,9 +125,10 @@ class LibroController extends Controller
                 'titulo' => 'required',
                 'autor' => 'required',
                 'editorial' => 'required',
+                'numero_hojas' => 'required|numeric',
                 'estado' => 'required',
-                'categoria_id' => 'required',
-                'curso_id' => 'required',
+                'categoria_id' => 'required|numeric',
+                'curso_id' => 'required|numeric',
             ]);
 
             $libro->update($request->all());

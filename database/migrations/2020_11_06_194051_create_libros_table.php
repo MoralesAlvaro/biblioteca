@@ -19,7 +19,8 @@ class CreateLibrosTable extends Migration
             $table->longText('titulo');
             $table->string('autor', 150);
             $table->string('editorial', 150);
-            $table->string('estado', 10);
+            $table->integer('numero_hojas');
+            $table->boolean('estado');
             $table->unsignedInteger('categoria_id');
             $table->unsignedInteger('curso_id');
             $table->softDeletes();

@@ -25,7 +25,7 @@ class PrestamoController extends Controller
         //
         $panel = 'Préstamos';
         $slug = 'prestamos';
-        $encabezados= ['ID', 'Prestado por', 'Libro', 'Fecha'];
+        $encabezados= ['ID', 'Prestado por', 'Libro', 'Prestado', 'Devolución'];
         $data = Prestamo::orderBy('id', 'DESC')->paginate(1000);
         return view('prestamo.index', compact('data','panel', 'encabezados', 'slug'));
     }
@@ -58,6 +58,7 @@ class PrestamoController extends Controller
         $request->validate([
             'estudiante_id' => 'required',
             'libro_id' => 'required',
+            'devolucion' => 'required',
             'comentario' => '',
         ]);
 
@@ -65,7 +66,7 @@ class PrestamoController extends Controller
         $libro = Libro::find($request->libro_id);
         if ($libro) {
             // Actualizando campo estado del libro
-            $libro->fill(['estado' => 'Prestado'])->update();
+            $libro->fill(['estado' => 0])->update();
         }
 
         $prestamo = new Prestamo($request->all());
@@ -122,6 +123,7 @@ class PrestamoController extends Controller
             $request->validate([
                 'estudiante_id' => 'required',
                 'libro_id' => 'required',
+                'devolucion' => 'required',
                 'comentario' => '',
             ]);
 

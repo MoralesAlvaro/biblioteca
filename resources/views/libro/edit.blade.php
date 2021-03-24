@@ -18,7 +18,7 @@
 
 <x-form :name="$nameForm" method="update" :slug="$slug" btn="Guardar" :result="$data">
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-12">
       <x-field-edit :result="$data" type="text" nameInput="titulo" fieldName="Titulo" placeholder="Ingrese Código del estudiante" maxlength="50" minlength="5"/>  
     </div>
     <div class="col-sm-6">
@@ -30,6 +30,10 @@
 
     <div class="col-sm-6">
       <x-field-edit :result="$data" type="text" nameInput="editorial" fieldName="Editorial" placeholder="Ingrese el nombre de la editorial" maxlength="150" minlength="5"/>  
+    </div>
+
+    <div class="col-sm-6">
+      <x-field-edit :result="$data" type="number" nameInput="numero_hojas" fieldName="Páginas" placeholder="Ingrese el número de páginas del libro" maxlength="11" />  
     </div>
 
     <input type="hidden" class="form-control" name="estado" id="estado" value="{{$data->estado}}">

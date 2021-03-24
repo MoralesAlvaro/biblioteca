@@ -12,7 +12,8 @@ $factory->define(Libro::class, function (Faker $faker) {
         'titulo' => $faker->lastName,
         'autor' => $faker->name,
         'editorial' => $faker->name,
-        'estado' => 'Disponible',
+        'numero_hojas' => $faker->numberBetween($min = 100, $max = 1000),
+        'estado' => '1',
         'categoria_id' => $faker->numberBetween($min = 1, $max = 10),
         'curso_id' => $faker->numberBetween($min = 1, $max = 10),
     ];

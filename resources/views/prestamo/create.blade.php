@@ -13,7 +13,7 @@
         <label>Libro</label>
         <select class="form-control select2" name="libro_id" data-placeholder="" style="width: 100%;" >
           @foreach($libro as $datos)
-            @if($datos->estado == 'Disponible')
+            @if($datos->estado == 1)
               <option value="{{$datos->id}}" {{ $datos->id == $id ? 'selected' : '' }}>{{$datos->titulo}}</option>
             @endif
           @endforeach
@@ -26,6 +26,10 @@
         @endif
       </div>
       <a href="{{ route('libros'.'.create')}}">¿Desea registrar un nuevo libro?</a>
+    </div>
+
+    <div class="col-sm-6">
+      <x-field type="date" nameInput="devolucion" fieldName="Fecha devolución" placeholder="Ingrese fecha de devolucion" maxlength="20"/>  
     </div>
   </div> 
   <x-texttarea fieldName="Comentario" nameText="comentario" />

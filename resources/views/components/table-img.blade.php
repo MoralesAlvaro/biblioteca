@@ -1,5 +1,6 @@
 <x-btn nameBtn="Nuevo" :slug="$slug.'.create'"></x-btn>
 
+
 <div class="container">
   <!-- Mensaje de confirmación -->
   @if (session('success'))
