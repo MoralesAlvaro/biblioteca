@@ -15,7 +15,7 @@ class CursoController extends Controller
     public function index()
     {
         //
-        $panel = 'Curso';
+        $panel = 'Grado';
         $slug = 'cursos';
         $encabezados= ['ID', 'Título', 'Código'];
         $campos= ['id', 'titulo', 'codigo'];

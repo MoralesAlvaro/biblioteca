@@ -9,7 +9,7 @@
       <x-link-menu href="{{route('prestamos.index')}}" name="Préstamos"/>
       <x-link-menu href="{{route('devoluciones.index')}}" name="Devoluciones"/>
       <x-link-menu href="{{route('categorias.index')}}" name="Categorías"/>
-      <x-link-menu href="{{route('cursos.index')}}" name="Cursos"/>
+      <x-link-menu href="{{route('cursos.index')}}" name="Grado"/>
     </x-section-menu>
 
     <!-- Sección menú Personas -->
