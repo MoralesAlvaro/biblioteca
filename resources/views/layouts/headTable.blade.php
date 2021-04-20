@@ -33,7 +33,11 @@
         <a href="{{route('home')}}" class="nav-link">Inicio</a>
       </li>
     </ul>
-
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <img src="{{ url('img/cc.png') }}" class="d-block" alt="icon" width="30">
+      </li>
+    </ul>
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown">
