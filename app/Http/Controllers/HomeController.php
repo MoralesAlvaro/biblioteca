@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Prestamo;
+use App\Libro;
+use App\User;
+use App\Categoria;
 
 class HomeController extends Controller
 {
@@ -23,6 +27,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $libro = Libro::all()->count();        
+        $prestamos = Prestamo::all()->count();
+        $usuarios = User::all()->count();
+        $categorias = Categoria::all()->count();
+
+        return view('home', compact('libro', 'prestamos', 'usuarios', 'categorias'));
     }
 }
