@@ -54,7 +54,7 @@ class DevolucionController extends Controller
         $libro = Libro::find($request->libro_id);
         if ($libro) {
             // Actualizando campo estado del libro
-            $libro->estado = 'Disponible';
+            $libro->estado = '1';
             $libro->update();
 
             // Eliminando registro de préstamos
