@@ -20,8 +20,7 @@
 
       <!-- Sección menú Reportes -->
       <x-section-menu class="{{ request()->routeIs($reportes ?? '')? 'active' : '' }}" icon="fa-edit" name="Reportes">
-      <x-link-menu href="{{route('home')}}" name="Reporte General"/>
-      <x-link-menu href="{{route('home')}}" name="Reporte Personalizado"/>
+      <x-link-menu href="{{route('reportegeneral')}}" name="Reporte General"/>
     </x-section-menu>
   </ul>
 </nav>

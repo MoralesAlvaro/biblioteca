@@ -69,7 +69,7 @@
                             <span class="notavailable">{{'Prestado'}}</span>
                           @endif
                       </div>
-                      <div class="col-md-4">
+                      <div class="col-md-4 mx-auto">
                         @if($datos[$i]->estado === 1)
                           {{-- Editar --}}
                           <a href="{{ route($slug.'.edit',$datos[$i]->id)}}" class="btn btn-sm ">

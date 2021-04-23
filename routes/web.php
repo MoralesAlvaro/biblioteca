@@ -23,6 +23,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('resetPassword', 'UserController@resetPasswordView')->name('resetPassword');
 Route::post('updatePassword','UserController@updatePassword')->name('updatePassword');
 
+Route::get('reportegeneral', 'ReporteController@index')->name('reportegeneral');
+Route::get('reporteXport', 'ReporteController@exportarGeneral')->name('reporteXport');
+
 Route::group(['middleware' => 'auth'], function ($router) {
     Route::resource('categorias', 'CategoriaController');
     Route::resource('cursos', 'CursoController');
