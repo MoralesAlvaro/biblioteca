@@ -17,7 +17,7 @@ class CursoController extends Controller
         //
         $panel = 'Grado';
         $slug = 'cursos';
-        $encabezados= ['ID', 'Título', 'Código'];
+        $encabezados= ['ID', 'Grado', 'Código'];
         $campos= ['id', 'titulo', 'codigo'];
         $data = Curso::orderBy('id', 'DESC')->paginate('50');
         return view('curso.index', compact('data','panel', 'encabezados', 'campos', 'slug'));
@@ -32,7 +32,7 @@ class CursoController extends Controller
     {
         //
         $slug = 'cursos';
-        $nameForm = 'Crear Curso';
+        $nameForm = 'Crear Grado';
         return view('curso.create', compact('slug', 'nameForm'));
     }
 
@@ -52,7 +52,7 @@ class CursoController extends Controller
 
         $curso = new Curso($request->all());
         $curso->save();
-        return redirect('/cursos/create')->with('success', 'El curso se ha sido guardado correctamente!.');
+        return redirect('/cursos/create')->with('success', 'El Grado se ha sido guardado correctamente!.');
     }
 
     /**
@@ -76,7 +76,7 @@ class CursoController extends Controller
     {
         //
         $slug = 'cursos';
-        $nameForm = 'Actualizar Categoría';
+        $nameForm = 'Actualizar Grado';
         $data = Curso::find($id);
         return view('/curso.edit', compact('slug', 'nameForm', 'data'));
     }
@@ -98,7 +98,7 @@ class CursoController extends Controller
         
         $curso = Curso::find($id);
         $curso->update($request->all());
-        return redirect('/cursos')->with('success', 'El curso se ha sido actualizado con éxito!.');
+        return redirect('/cursos')->with('success', 'El Grado se ha sido actualizado con éxito!.');
     }
 
     /**
@@ -112,6 +112,6 @@ class CursoController extends Controller
         //
         $data = Curso::find($id);
         $data->delete();
-        return redirect('/cursos')->with('success', 'El curso se ha sido eliminado correctamente!.');
+        return redirect('/cursos')->with('success', 'El Grado se ha sido eliminado correctamente!.');
     }
 }

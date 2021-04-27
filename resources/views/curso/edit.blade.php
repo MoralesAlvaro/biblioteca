@@ -5,7 +5,7 @@
 <x-form :name="$nameForm" method="update" :slug="$slug" btn="Guardar" :result="$data">
   <div class="row">
     <div class="col-md-6">
-      <x-field-edit type="text" nameInput="titulo" :result='$data' fieldName="Categoría" />
+      <x-field-edit type="text" nameInput="titulo" :result='$data' fieldName="Grado" />
     </div>
     <div class="col-md-6">
       <div class="form-group">

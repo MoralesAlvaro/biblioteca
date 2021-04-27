@@ -5,7 +5,7 @@
 <x-form :name="$nameForm" method="store" :slug="$slug" btn="Guardar">
   <div class="row">
     <div class="col-md-6">
-      <x-field type="text" nameInput="titulo" fieldName="Título" placeholder="Ingrese el título" maxlength="" />
+      <x-field type="text" nameInput="titulo" fieldName="Grado" placeholder="Ingrese el nombre del Grado" maxlength="" />
     </div>
     <div class="col-md-6">
       <div class="form-group">

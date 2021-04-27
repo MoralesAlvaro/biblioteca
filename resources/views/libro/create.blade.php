@@ -25,7 +25,7 @@
     <input type="hidden" class="form-control" name="estado" id="estado" value="1">
 
     <div class="col-sm-6">
-      <x-select fieldName="Curso" paceholder="Seleccione uno" nameSelect="curso_id" :result="$curso ?? ''" campo="titulo" />
+      <x-select fieldName="Grado" paceholder="Seleccione uno" nameSelect="curso_id" :result="$curso ?? ''" campo="titulo" />
     </div>
     <div class="col-sm-6">
       <x-select fieldName="Categoría" paceholder="Seleccione uno" nameSelect="categoria_id" :result="$categoria" campo="nombre" />

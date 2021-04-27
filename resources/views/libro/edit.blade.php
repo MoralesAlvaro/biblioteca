@@ -40,7 +40,7 @@
 
     <div class="col-sm-6">
       <div class="form-group">
-        <label>Curso</label>
+        <label>Grado</label>
         <select class="form-control select2" name="curso_id" data-placeholder="" style="width: 100%;" value="{{ old('curso_id') }}" >
           @foreach($curso as $item)
             @if($item->id == $data->curso_id)

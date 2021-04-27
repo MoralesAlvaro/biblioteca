@@ -26,7 +26,7 @@
 
   <div class="col-5">
     <x-p-card :result="$result->estado" nameLabel="Estado" icono="" />
-    <x-p-card :result="$result->curso->titulo" nameLabel="Curso" icono="" />
+    <x-p-card :result="$result->curso->titulo" nameLabel="Grado" icono="" />
     <x-p-card :result="$result->categoria->nombre" nameLabel="Categoría" icono="" />
     <x-p-card :result="$result->numero_hojas" nameLabel="Páginas" icono="" />
   </div>
