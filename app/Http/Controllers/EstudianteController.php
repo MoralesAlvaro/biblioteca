@@ -20,8 +20,8 @@ class EstudianteController extends Controller
         //
         $panel = 'Estudiantes';
         $slug = 'estudiantes';
-        $encabezados= ['ID', 'Código', 'Nombre', 'Apellido', 'Curso'];
-        $campos= ['id', 'codigo_estudiante', 'nombre', 'apellido','curso_id'];
+        $encabezados= ['ID', 'Código', 'Nombre', 'Apellido'];
+        $campos= ['id', 'codigo_estudiante', 'nombre', 'apellido'];
         $data = Estudiante::orderBy('id', 'DESC')->paginate('50');
         return view('estudiante.index', compact('data','panel', 'encabezados', 'campos', 'slug'));
     }

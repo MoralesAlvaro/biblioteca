@@ -25,6 +25,7 @@
           @foreach($encabezados as $key)
           <th>{{$key}}</th>
           @endforeach
+          <th>Ver</th>
           <th>Editar</th>
           <th>Eliminar</th>
         </tr>
@@ -35,6 +36,9 @@
           @foreach($campos as $campo)
               <td>{{$datos->$campo}}</td>
           @endforeach
+          <td>
+            <a href="{{ route($slug.'.show',$datos->id)}}" class="btn btn-sm btn-success">Ver</a>
+          </td>
           <td>
             <a href="{{ route($slug.'.edit',$datos->id)}}" class="btn btn-sm btn-primary">Editar</a>
           </td>
