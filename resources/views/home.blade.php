@@ -3,16 +3,12 @@
 @section('content')
 <br>
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="{{url('img/banner/biblio01.jpg')}}" class="d-block w-100" alt="...">
+  <div class="carousel-inner carousel-container">
+  @for ($i = 0; $i <= 4; $i++)
+    <div class="{{$i === 0 ? 'carousel-item active' : 'carousel-item' }}">
+      <img src="{{url('img/banner/image-'.$i.'.jpeg')}}" class="d-block w-100" alt="...">
     </div>
-    <div class="carousel-item">
-      <img src="{{url('img/banner/biblio02.jpg')}}" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="{{url('img/banner/biblio03.jpg')}}" class="d-block w-100" alt="...">
-    </div>
+  @endfor
   </div>
   <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -92,3 +88,13 @@
     <!-- /.row -->
 </div>
 @endsection
+<style>
+.carousel-inner.carousel-container {
+  height: 25rem
+}
+.carousel-inner.carousel-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+</style>
