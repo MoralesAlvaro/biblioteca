@@ -56,6 +56,11 @@
             <button type="submit"  class="btn solid">Iniciar</button>
             <a href="{{route('resetPassword')}} ">¿Olvidates tu Contraseña?</a>
           </form>
+          <div class="mt-2 row justify-content-center">
+            <div class="col-4">
+              <img src="{{ url('img/cc-logo.png') }}" class="d-block" alt="icon" width="200">
+            </div>
+          </div>
         </div>
       </div>
 

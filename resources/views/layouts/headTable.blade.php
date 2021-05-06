@@ -35,7 +35,7 @@
     </ul>
     <ul class="navbar-nav">
       <li class="nav-item">
-        <img src="{{ url('img/cc.png') }}" class="d-block" alt="icon" width="30">
+        <img src="{{ url('img/cc-logo.png') }}" class="d-block" alt="icon" width="100">
       </li>
     </ul>
     <!-- Right navbar links -->
