@@ -68,10 +68,6 @@
         <div class="panel left-panel">
           <div class="content">
             <h3 class="text-poppins">Bienvenid@s!</h3>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-              ex ratione. Aliquid!
-            </p>
           </div>
         </div>
         <div class="panel right-panel">

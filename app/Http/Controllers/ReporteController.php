@@ -23,6 +23,6 @@ class ReporteController extends Controller
         $encabezados= ['ID', 'Prestado por', 'Libro', 'Prestado'];
         $data = Prestamo::orderBy('id', 'DESC')->get();
         $pdf = PDF::loadView('reportes.pruebaparapdf', compact('panel', 'encabezados', 'data'));
-        return $pdf->download('pruebapdf.pdf');
+        return $pdf->download('Reporte General.pdf');
     }
 }

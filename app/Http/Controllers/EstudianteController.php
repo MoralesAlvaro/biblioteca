@@ -53,7 +53,7 @@ class EstudianteController extends Controller
             'codigo_estudiante' => 'required',
             'nombre' => 'required',
             'apellido' => 'required',
-            'foto' => 'required',
+            'foto' => '',
             'curso_id' => 'required',
         ]);
 

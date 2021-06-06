@@ -21,8 +21,8 @@
   <div class="input-group mb-3">
     <div class="input-group">
         <div class="custom-file">
-            <input type="file" accept="image/*" class="custom-file-input" name="photo" id="photo">
-            <label class="custom-file-label" for="photo">Sustituir foto</label>
+            <input type="file" accept="image/*" class="custom-file-input" name="foto" id="foto">
+            <label class="custom-file-label" for="foto" >Sustituir foto</label>
         </div>
         <!-- Mostando errores de validación -->        
         @error('name')

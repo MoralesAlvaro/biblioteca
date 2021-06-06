@@ -18,7 +18,7 @@ class CreateEstudiantesTable extends Migration
             $table->string('codigo_estudiante', 15);
             $table->string('nombre', 50);
             $table->string('apellido', 50);
-            $table->string('foto', 200);
+            $table->string('foto', 200)->nullable();
             $table->unsignedInteger('curso_id');
             $table->softDeletes();
             $table->timestamps();
