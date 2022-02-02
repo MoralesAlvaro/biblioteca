@@ -25,6 +25,12 @@ Pasos:
 composer install
 ```
 
+1.1 Creación de variables de entorno
+```
+cp .env.example .env
+```
+
+
 2. Crear base de datos
    Nota: Puedes crearla con el nombre que gustes, ese nombre se añadira en las variables de entorno, en el archivo .env(raiz del proyecto)
    ̣`.env.example`
